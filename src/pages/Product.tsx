@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Grid,
@@ -40,6 +40,7 @@ function Product() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: "50px",
       }}>
       <Grid container justifyContent="center">
         <Grid item xs={12} sm={10} md={8} lg={6}>
@@ -66,10 +67,19 @@ function Product() {
                       {Food.foodId}
                     </TableCell>
                     <TableCell align="left">{Food.foodName}</TableCell>
-                    <TableCell align="left">{Food.foodImage}</TableCell>
+                    <TableCell align="left">
+                      {" "}
+                      <img
+                        src={Food.foodImage}
+                        style={{ maxWidth: "50px", maxHeight: "50px" }}
+                        alt="Food"
+                      />
+                    </TableCell>
                     <TableCell align="left">{Food.foodPrice}</TableCell>
                     <TableCell align="left">
                       {/* Thao tác như Xóa, Sửa, vv. */}
+                      <button>Xóa</button>
+                      <button>Sửa</button>
                     </TableCell>
                   </TableRow>
                 ))}

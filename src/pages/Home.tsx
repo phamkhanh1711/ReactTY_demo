@@ -330,7 +330,6 @@ function Home() {
                           </span>
                         </Box>
 
-                        {/* Icons */}
                         <Box
                           className="fade-right"
                           position="absolute"
