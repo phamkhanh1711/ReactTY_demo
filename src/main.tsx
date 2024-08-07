@@ -9,15 +9,19 @@ import Login from "./Auth/Login.tsx";
 import Product from "./pages/Product.tsx";
 import FoodProduct from "./pages/crud/FoodProduct.tsx";
 import Home from "./pages/Home.tsx";
+import { Provider } from "react-redux";
+import store from "./redux/store.jsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Router>
-    <App>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/shop" element={<Product />} />
-        <Route path="/Foods" element={<FoodProduct />} />
-      </Routes>
-    </App>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <App>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/shop" element={<Product />} />
+          <Route path="/Foods" element={<FoodProduct />} />
+        </Routes>
+      </App>
+    </Router>
+  </Provider>
 );
